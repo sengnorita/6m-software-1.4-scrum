@@ -75,20 +75,12 @@ class Permission {
 }
 
 // Add code here
-
-class Document extends Permnission {
-  //the extends keyword allows Document to get all the properties and functions of the Permissions class
-
-  #content = null; //Good practice for a class's variable is to have initial values
-
+class Document extends Permission {
   constructor(role, operation, content) {
-    //special function used to create an instance of the class (OBject)
-    super(role, operation); //Uses Permission's constructor
-    this.#contrent = content; //this in this context means the Document's #content
+    super(role, operation);
+    this.content = content;
   }
-
   process() {
-    this.check() ? console.log("Allowed") : console.log("Blocked"); // this is htis context is the Document's check function that it got from the Permission class
-    console.log("Process content", this.#content);
+    return this.check() ? console.log("Allowed") : console.log("Blocked");
   }
 }
