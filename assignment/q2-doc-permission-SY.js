@@ -84,3 +84,24 @@ class Document extends Permission {
     return this.check() ? console.log("Allowed") : console.log("Blocked");
   }
 }
+const d1 = new Document(
+  Permission.RolesConst.EDITOR,
+  Permission.OperationsConst.UPDATE,
+  "Hello content"
+);
+
+d1.process();
+
+const d2 = new Document(
+  Permission.RolesConst.READER,
+  Permission.OperationsConst.UPDATE,
+  "Hello content"
+);
+d2.process();
+
+const d3 = new Document(
+  Permission.RolesConst.OWNER,
+  Permission.OperationsConst.DELETE,
+  "Hello content"
+);
+d3.process();

@@ -7,9 +7,8 @@
 */
 
 // Task: Add code here
-
 class BaseSignal {
-  constructor() {
+  constructor(type) {
     if (this.constructor.name === "BaseSignal") {
       throw new Error("This class cannot be instantiated");
     }
@@ -22,19 +21,19 @@ class BaseSignal {
 
 class TvSignal extends BaseSignal {
   constructor() {
-    super(); // Add code here
+    super("tv"); // Add code here
   }
 }
 
 class AirconSignal extends BaseSignal {
   constructor() {
-    super(); // Add code here
+    super("aircon"); // Add code here
   }
 }
 
 class DoorSignal extends BaseSignal {
   constructor() {
-    super(); // Add code here
+    super("door"); // Add code here
   }
 }
 
